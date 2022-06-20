@@ -45,7 +45,7 @@ public class MenuCategory {
         System.out.println(categoryName);
         for (int i = 0, m = menuItemNames.size(); i < m; i++){
             System.out.println("\t" + menuItemNames.get(i) + " - " + menuItemPrices.get(i) + " - "
-                    + menuItemsImgUrls.get(i));
+                    + "https://dominodomoy.ru" + menuItemsImgUrls.get(i));
         }
     }
 }
