@@ -7,8 +7,6 @@ public class MenuCategory {
     private Document doc;
     private String categoryName;
 
-
-
     public MenuCategory(String name, Document doc) {
         this.categoryName = name;
         this.doc = doc;
@@ -18,26 +16,23 @@ public class MenuCategory {
         Elements elems;
         ArrayList<String> arrList = new ArrayList<>();
         switch (operation) {
-            case 1: {
+            case 1 -> {
                 elems = doc.getElementsByAttributeValueStarting("class", "catalog-section-item-name-wrapper intec-cl-text-hover");
                 for (Element el : elems) {
                     arrList.add(el.text());
                 }
-                break;
             }
-            case 2: {
+            case 2 -> {
                 elems = doc.getElementsByAttributeValueStarting("class", "catalog-section-item-price-discount");
                 for (Element el : elems) {
                     arrList.add(el.text());
                 }
-                break;
             }
-            case 3: {
+            case 3 -> {
                 elems = doc.getElementsByAttributeValueStarting("class", "catalog-section-item-image-look intec-ui-picture intec-image-effect").select("img");
                 for (Element el : elems) {
                     arrList.add(el.attr("data-original"));
                 }
-                break;
             }
         }
         return arrList;
@@ -49,7 +44,7 @@ public class MenuCategory {
         ArrayList<String> menuItemsImgUrls = formArray(3);
         System.out.println(categoryName);
         for (int i = 0, m = menuItemNames.size(); i < m; i++){
-            System.out.println(menuItemNames.get(i) + " - " + menuItemPrices.get(i) + " - "
+            System.out.println("\t" + menuItemNames.get(i) + " - " + menuItemPrices.get(i) + " - "
                     + menuItemsImgUrls.get(i));
         }
     }
