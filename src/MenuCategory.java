@@ -17,7 +17,7 @@ public class MenuCategory {
         ArrayList<String> arrList = new ArrayList<>();
         switch (operation) {
             case 1 -> {
-                elems = doc.getElementsByAttributeValueStarting("class", "catalog-section-item-name-wrapper intec-cl-text-hover");
+                elems = doc.getElementsByAttributeValueStarting("class", "catalog-section-item-name-wrapper");
                 for (Element el : elems) {
                     arrList.add(el.text());
                 }
@@ -29,7 +29,7 @@ public class MenuCategory {
                 }
             }
             case 3 -> {
-                elems = doc.getElementsByAttributeValueStarting("class", "catalog-section-item-image-look intec-ui-picture intec-image-effect").select("img");
+                elems = doc.getElementsByAttributeValueStarting("class", "catalog-section-item-image-look").select("img");
                 for (Element el : elems) {
                     arrList.add(el.attr("data-original"));
                 }

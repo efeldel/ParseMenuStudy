@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         ArrayList<MenuCategory> menu = new ArrayList<>();
         Document doc = Jsoup.connect(catalogUrl).get();
-        Elements categories = doc.getElementsByAttributeValueStarting("class", "catalog-section-list-item-title intec-cl-text-hover");
+        Elements categories = doc.getElementsByAttributeValueStarting("class", "catalog-section-list-item-title");
         for (Element category : categories) {
             menu.add(new MenuCategory(category.text(),Jsoup.connect(pageUrl+category.attr("href")).get()));
         }
